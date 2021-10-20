@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>网盘首页</title>
+</head>
+<body>
+<ol>
+    <li th:each="file:${fileList}" th:text="${file}"></li>
+</ol>
+<!--<p>&#45;&#45;&#45;&#45;隔离&#45;&#45;&#45;&#45;</p>-->
+<!--<ol>-->
+<!--    <li th:each="file:${fileList}" th:text="${file.getFileName()}"></li>-->
+<!--</ol>-->
+<p>----隔离----</p>
+<table border="1px">
+    <tr th:each="file:${fileList}">
+        <td th:text="${file.getFileId()}">1-2</td>
+        <td th:text="${file.getFileName()}">1-1</td>
+        <td th:text="${file.getFileSize()}">1-3</td>
+        <td th:text="${file.getFileParentFolder()}">1-4</td>
+        <td th:text="${file.getFileCreator()}">1-5</td>
+    </tr>
+</table>
+</body>
+</html>
